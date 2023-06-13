@@ -1,0 +1,435 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* PHẦN BÓNG NỔI */
+
+.bubles {
+  position: fixed;
+  background: #252525;
+  width: 100%;
+  height: 100vh;
+  z-index: -100;
+}
+
+.balls {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+
+.balls .ball-item {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #4fc3dc;
+  box-shadow: 0 0 15px #057992, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+
+  animation: animate 15s linear forwards;
+  animation-duration: calc(16s / var(--i));
+}
+
+.balls:nth-child(2) {
+  transform: translateX(35px);
+}
+
+.balls:nth-child(2) .ball-item {
+  animation-duration: calc(18s / var(--i));
+}
+
+.balls .ball-item:nth-child(2n) {
+  background: #ff2d75;
+  box-shadow: 0 0 15px #aa043e, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
+.balls .ball-item:nth-child(8) {
+  background: #16ff00;
+  box-shadow: 0 0 15px #18880e, 0 0 50px #16ff00, 0 0 100px #16ff00;
+}
+
+.balls .ball-item:nth-child(5) {
+  background: #16ff00;
+  box-shadow: 0 0 15px #18880e, 0 0 50px #16ff00, 0 0 100px #16ff00;
+}
+
+.balls .ball-item:nth-child(16) {
+  background: #16ff00;
+  box-shadow: 0 0 15px #18880e, 0 0 50px #16ff00, 0 0 100px #16ff00;
+}
+
+.balls .ball-item:nth-child(13) {
+  background: #16ff00;
+  box-shadow: 0 0 15px #18880e, 0 0 50px #16ff00, 0 0 100px #16ff00;
+}
+.balls .ball-item:nth-child(1) {
+  background: #16ff00;
+  box-shadow: 0 0 15px #18880e, 0 0 50px #16ff00, 0 0 100px #16ff00;
+}
+.balls .ball-item:nth-child(27) {
+  background: #16ff00;
+  box-shadow: 0 0 15px #18880e, 0 0 50px #16ff00, 0 0 100px #16ff00;
+}
+.balls .ball-item:nth-child(30) {
+  background: #16ff00;
+  box-shadow: 0 0 15px #18880e, 0 0 50px #16ff00, 0 0 100px #16ff00;
+}
+
+.balls .ball-item:nth-child(21) {
+  background: #16ff00;
+  box-shadow: 0 0 15px #18880e, 0 0 50px #16ff00, 0 0 100px #16ff00;
+}
+
+.balls .ball-item:nth-child(33) {
+  background: #16ff00;
+  box-shadow: 0 0 15px #18880e, 0 0 50px #16ff00, 0 0 100px #16ff00;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(105vh) scale(0);
+  }
+
+  100% {
+    transform: translateY(-15vh) scale(1);
+  }
+}
+
+/* PHẦN NÚT BẤM */
+.btn {
+  position: relative;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 80px;
+  background: #000;
+  border-radius: 99px;
+  overflow: hidden;
+  z-index: 1;
+  animation: appear 3s linear forwards;
+  animation-delay: 8s;
+  opacity: 0;
+  cursor: pointer;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.btn::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(transparent, transparent, transparent, #00d7ff);
+  animation: animated 4s infinite linear;
+}
+
+.btn::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(transparent, transparent, transparent, #ea047e);
+  animation: animated 4s infinite linear;
+  animation-delay: -2s;
+}
+
+@keyframes animated {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn span {
+  position: absolute;
+  inset: 3px;
+  border-radius: 88px;
+  background: #252525;
+  z-index: 5;
+}
+
+.btn button {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: 2em;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  user-select: none;
+  color: #fff;
+  z-index: 10;
+}
+
+.btn:hover button {
+  animation: changeColor 4s infinite linear;
+  cursor: pointer;
+}
+
+@keyframes changeColor {
+  0%,
+  100% {
+    text-shadow: 0 0 10px #e90064, 0 0 10px #e90064, 0 0 10px #e90064;
+  }
+  50% {
+    text-shadow: 0 0 10px #31e1f7, 0 0 10px #31e1f7, 0 0 10px #31e1f7;
+  }
+}
+
+@keyframes lose {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* HIỆU ỨNG PHẦN ẢNH */
+.img {
+  position: relative;
+}
+
+.main-content {
+  position: relative;
+  top: -20vh;
+  width: 100vw;
+  height: 100vh;
+  animation: slideInTop 3s linear forwards; 
+  z-index: 12;
+}
+
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+img {
+  display: block;
+  width: 100vw;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* PHÀN CHỮ HAPPY BIRTHDAY */
+.content {
+  position: absolute;
+  top: 10vh;
+  left: 25vw;
+  user-select: none;
+}
+
+.content-blocktext1,
+.content-blocktext2 {
+  text-align: center;
+}
+
+.content span {
+  position: relative;
+  display: inline-block;
+  font-size: 5.5em;
+  font-family: "Leckerli One", cursive;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  color: transparent;
+  animation: addColor 2s infinite linear;
+}
+
+.content span:nth-child(1) {
+  animation-delay: calc(3s + 0.5s);
+}
+.content span:nth-child(2) {
+  animation-delay: calc(3s + 1s);
+}
+
+.content span:nth-child(3) {
+  animation-delay: calc(3s + 1.5s);
+}
+
+.content span:nth-child(4) {
+  animation-delay: calc(3s + 2s);
+}
+
+.content span:nth-child(5) {
+  animation-delay: calc(3s + 2.5s);
+}
+
+.content span:nth-child(6) {
+  animation-delay: calc(3s + 3s);
+}
+
+.content span:nth-child(7) {
+  animation-delay: calc(3s + 3.5s);
+}
+
+.content span:nth-child(8) {
+  animation-delay: calc(3s + 4s);
+}
+
+.content span:nth-child(9) {
+  animation-delay: calc(3s + 4.5s);
+}
+
+.content span:nth-child(10) {
+  animation-delay: calc(3s + 5s);
+}
+
+.content span:nth-child(11) {
+  animation-delay: calc(3s + 5.5s);
+}
+
+.content span:nth-child(12) {
+  animation-delay: calc(3s + 6s);
+}
+
+.content span:nth-child(13) {
+  animation-delay: calc(3s + 6.5s);
+}
+
+@keyframes addColor {
+  0% {
+    scale: 1;
+    color: #fff;
+    text-shadow: 0 0 10px #654e92, 0 0 10px #654e92, 0 0 10px #654e92;
+  }
+  25% {
+    scale: 1.1;
+    color: #fff;
+    text-shadow: 0 0 10px #6c9bcf, 0 0 10px #6c9bcf, 0 0 10px #6c9bcf;
+  }
+  50% {
+    scale: 1;
+    color: #fff;
+    text-shadow: 0 0 10px #a5c0dd, 0 0 10px #a5c0dd, 0 0 10px #a5c0dd;
+  }
+  75% {
+    scale: 1.1;
+    color: #fff;
+    text-shadow: 0 0 10px #ebd8b2, 0 0 10px #ebd8b2, 0 0 10px #ebd8b2;
+  }
+  100% {
+    scale: 1;
+    color: #fff;
+    text-shadow: 0 0 10px #654e92, 0 0 10px #654e92, 0 0 10px #654e92;
+  }
+}
+
+/* LÀM PHÀN TRANG TRÍ CHONG CHÓNG */
+.decoration-block {
+  position: absolute;
+  top: 12vh;
+  display: flex;
+  justify-content: space-between;
+  animation: show 1s linear forwards;
+  animation-delay: 3.5s;
+  opacity: 0;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.decoration-block .decoration-wire > img {
+  width: 400px;
+}
+
+.decoration-wire .pinwheel img {
+  width: 75px;
+}
+
+
+/* PHẦN CHONG CHÓNG BÊN TRÁI */
+.decoration-block .decoration-wire:nth-child(1) {
+  position: relative;
+  left: 8vw;
+}
+
+.decoration-wire:nth-child(1) .pinwheel-1 {
+  position: absolute;
+  top: -2px;
+  left: -35px;
+  animation: rotate 3s infinite linear;
+  animation-delay: 3.5s;
+}
+
+.decoration-wire:nth-child(1) .pinwheel-2 {
+  position: absolute;
+  top: -20px;
+  left: 105px;
+  animation: rotate 3s infinite linear;
+  animation-delay: 3.5s;
+}
+
+/* PHẦN CHONG CHÓNG BÊN PHẢI */
+.decoration-block .decoration-wire:nth-child(2) {
+  position: relative;
+  right: -32vw;
+  transform: scaleX(-1);
+  filter: FlipH;
+}
+
+.decoration-wire:nth-child(2) .pinwheel-1 {
+  position: absolute;
+  top: -2px;
+  left: -35px;
+  animation: rotate 3s infinite linear;
+  animation-delay: 3.5s;
+}
+
+.decoration-wire:nth-child(2) .pinwheel-2 {
+  position: absolute;
+  top: -20px;
+  left: 105px;
+  animation: rotate 3s infinite linear;
+  animation-delay: 3.5s;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+
