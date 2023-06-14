@@ -221,7 +221,7 @@ body {
   top: -20vh;
   width: 100vw;
   height: 100vh;
-  animation: slideInTop 3s linear forwards; 
+  /* animation: slideInTop 3s linear forwards;  */
   z-index: 12;
 }
 
@@ -374,7 +374,6 @@ img {
   width: 75px;
 }
 
-
 /* PHẦN CHONG CHÓNG BÊN TRÁI */
 .decoration-block .decoration-wire:nth-child(1) {
   position: relative;
@@ -421,7 +420,6 @@ img {
   animation-delay: 3.5s;
 }
 
-
 @keyframes rotate {
   from {
     transform: rotate(0);
@@ -431,5 +429,43 @@ img {
   }
 }
 
+/* PHẦN LÍ THƯ GỬI NGƯỜI CHÚC SINH NHẬT */
+.emotion-email {
+  position: absolute;
+  top: 50vh;
+  left: 27vw;
+  width: 635px;
+  background-color: #D2E9E9;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.4), -7px -7px 7px 0px rgba(255,255,255,0.52);
+  user-select: none;
+  border-radius: 8px;
+}
+
+.emotion-emai__content-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.emotion-emai__content-heading .heart {
+  color: #ff0000;
+  font-size: 20px;
+}
+
+.emotion-emai__content h2 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 30px;
+}
 
 
+
+.emotion-emai__content p {
+  padding-top: 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  text-shadow: 0 0 0 5px #FFF5E4;
+}
