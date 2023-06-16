@@ -50,7 +50,11 @@ btn.onclick = function () {
                       <span>A</span>
                       <span>Y</span>
                     </div>
+
+                    <div class="img-btn">
+                      <button>Nhấn tiếp vô đây nèeeee</button>
                     </div>
+                  </div>
       `;
   imgBlock.appendChild(img);
 };

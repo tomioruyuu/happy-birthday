@@ -15,6 +15,10 @@ body {
 
 /* PHẦN BÓNG NỔI */
 
+body {
+  height: 10000px;
+}
+
 .bubles {
   position: fixed;
   background: #252525;
@@ -221,7 +225,7 @@ body {
   top: -20vh;
   width: 100vw;
   height: 100vh;
-  /* animation: slideInTop 3s linear forwards;  */
+  animation: slideInTop 3s linear forwards; 
   z-index: 12;
 }
 
@@ -246,8 +250,8 @@ img {
 /* PHÀN CHỮ HAPPY BIRTHDAY */
 .content {
   position: absolute;
-  top: 10vh;
-  left: 25vw;
+  top: 32vh;
+  left: 17vw;
   user-select: none;
 }
 
@@ -259,7 +263,7 @@ img {
 .content span {
   position: relative;
   display: inline-block;
-  font-size: 5.5em;
+  font-size: 7em;
   font-family: "Leckerli One", cursive;
   font-weight: 400;
   letter-spacing: 0.4em;
@@ -349,10 +353,10 @@ img {
 /* LÀM PHÀN TRANG TRÍ CHONG CHÓNG */
 .decoration-block {
   position: absolute;
-  top: 12vh;
+  top: 35vh;
   display: flex;
   justify-content: space-between;
-  animation: show 1s linear forwards;
+  animation: show 3s linear forwards;
   animation-delay: 3.5s;
   opacity: 0;
 }
@@ -428,6 +432,43 @@ img {
     transform: rotate(-360deg);
   }
 }
+
+/* PHÀN NÚT GẮN LIỀN VỚI ẢNH */
+.img-btn {
+  position: absolute;  
+  bottom: -13vh;
+  left: 33vw;
+  transform: translateX(-50%);
+}
+
+.img-btn button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 0 0 10px #E90064;
+  font-family: 'Dancing Script', cursive;
+  user-select: none;
+  animation: display 2s linear forwards;
+  animation-delay: 7s;
+  opacity: 0;
+}
+
+@keyframes display {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.img-btn button:hover {
+  text-shadow: 0 0 10px #E90064, 0 0 20px #E90064, 0 0 30px #E90064;
+  cursor: pointer;
+}
+
 
 /* PHẦN LÍ THƯ GỬI NGƯỜI CHÚC SINH NHẬT */
 .emotion-email {
