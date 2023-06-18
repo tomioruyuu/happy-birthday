@@ -15,7 +15,7 @@ body {
 
 /* PHẦN BÓNG NỔI */
 
-body {
+#main {
   height: 10000px;
 }
 
@@ -43,6 +43,7 @@ body {
 
   animation: animate 15s linear forwards;
   animation-duration: calc(16s / var(--i));
+  z-index: -100;
 }
 
 .balls:nth-child(2) {
@@ -225,7 +226,7 @@ body {
   top: -20vh;
   width: 100vw;
   height: 100vh;
-  animation: slideInTop 3s linear forwards; 
+  animation: slideInTop 3s linear forwards;
   z-index: 12;
 }
 
@@ -435,10 +436,12 @@ img {
 
 /* PHÀN NÚT GẮN LIỀN VỚI ẢNH */
 .img-btn {
-  position: absolute;  
-  bottom: -13vh;
-  left: 33vw;
-  transform: translateX(-50%);
+  position: absolute;
+  bottom: -80px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 21;
 }
 
 .img-btn button {
@@ -447,11 +450,11 @@ img {
   background-color: transparent;
   font-size: 30px;
   color: #fff;
-  text-shadow: 0 0 10px #E90064;
-  font-family: 'Dancing Script', cursive;
+  text-shadow: 0 0 10px #e90064;
+  font-family: "Dancing Script", cursive;
   user-select: none;
   animation: display 2s linear forwards;
-  animation-delay: 7s;
+  animation-delay: 8s;
   opacity: 0;
 }
 
@@ -464,22 +467,51 @@ img {
   }
 }
 
+@keyframes remove {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .img-btn button:hover {
-  text-shadow: 0 0 10px #E90064, 0 0 20px #E90064, 0 0 30px #E90064;
+  text-shadow: 0 0 10px #e90064, 0 0 20px #e90064, 0 0 30px #e90064;
   cursor: pointer;
 }
 
-
 /* PHẦN LÍ THƯ GỬI NGƯỜI CHÚC SINH NHẬT */
-.emotion-email {
+.block-emotion {
   position: absolute;
-  top: 50vh;
-  left: 27vw;
+  top: 20vh;
+  left: 28vw;
   width: 635px;
-  background-color: #D2E9E9;
+  z-index: 20;
+  animation: arrive 2s linear forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+@keyframes arrive {
+  from {
+    scale: 0;
+    opacity: 0;
+    transform: translateY(50vh);
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.emotion-email {
+  background-color: #d2e9e9;
   padding: 15px;
   text-align: center;
-  box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.4), -7px -7px 7px 0px rgba(255,255,255,0.52);
+  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.4),
+    -7px -7px 7px 0px rgba(255, 255, 255, 0.52);
   user-select: none;
   border-radius: 8px;
 }
@@ -497,16 +529,14 @@ img {
 }
 
 .emotion-emai__content h2 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-weight: 700;
   font-size: 30px;
 }
 
-
-
 .emotion-emai__content p {
   padding-top: 10px;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 18px;
-  text-shadow: 0 0 0 5px #FFF5E4;
+  text-shadow: 0 0 0 5px #fff5e4;
 }
