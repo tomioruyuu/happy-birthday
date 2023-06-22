@@ -4,10 +4,10 @@ btn.onclick = function () {
   // THÊM HIỆU ỨNG CHO NÚT ĐẦU TIÊN BIẾN MẤT
   this.style.animation = "lose 1s linear forwards";
 
-  // XOÁ NÚT VÀ BÓNG 
+  // XOÁ NÚT VÀ BÓNG
   setTimeout(() => {
     // this.remove()
-    document.querySelector('.balls').remove()
+    document.querySelector(".balls").remove();
   }, 2800);
 
   // TẠO PHẦN ẢNH
@@ -60,6 +60,11 @@ btn.onclick = function () {
                       <span>Y</span>
                     </div>
 
+                    <div class="avatar-block">
+                      <img src="./asssets/img/imgWire-1.png" alt="">
+                      <img src="./asssets/img/imgWire-4.png" alt="">
+                    </div>
+
                     <div class="img-btn">
                       <button>Nhấn tiếp vô đây nèeeee</button>
                     </div>
@@ -67,26 +72,52 @@ btn.onclick = function () {
       `;
   imgBlock.appendChild(img);
 
+  // NHẤN VÀO CHỮ HIỆN TRÊN ẢNH
   let imgBtn = document.querySelector(".img-btn");
+  let content1 = document.querySelector(".content-blocktext1");
+  let content2 = document.querySelector(".content-blocktext2");
+  let spanBlock = document.querySelectorAll(".content span");
+  console.log(spanBlock);
   imgBtn.onclick = function () {
+    // HIỆU ỨNG PHÀN CHỮ
+    Object.assign(content1.style, {
+      transform: "translateY(-50vh) translateX(-50px)",
+      scale: "0.5",
+      transition: "2s",
+    });
+
+    Object.assign(content2.style, {
+      transform: "translateY(-80vh) translateX(25vw)",
+      scale: "0.5",
+      transition: "2s",
+    });
+
+    spanBlock.forEach((spanItem) => {
+      Object.assign(spanItem.style, {
+        animation: "none",
+        color: "#fff",
+        letterSpacing: "0.2em",
+        textShadow: " 0 0 10px #06FF00, 0 0 10px #06FF00, 0 0 10px #06FF00",
+        animation: "changeColor 5s linear infinite",
+        animationDelay: "2.5s"
+      });
+    });
+
     // THÊM HIỆU ỨNG MỜ DẦN CHO NÚT TRONG ẢNH
     this.style.animation = " remove 1.5s linear forwards";
-    
+
     // THÊM HIỆU ỨNG MỜ DẦN CHO CHỮ VÀ 2 BÊN CHONG CHÓNG
-    let content = document.querySelector('.content')
-    content.style.animation = 'remove 1.5s linear forwards'
+    let decorationBlock = document.querySelector(".decoration-block");
+    decorationBlock.style.animation = "remove 1.5s linear forwards";
 
-    let decorationBlock = document.querySelector('.decoration-block')
-    decorationBlock.style.animation = 'remove 1.5s linear forwards'
+    setTimeout(function () {
+      this.remove();
+      content.remove();
+      decorationBlock.remove();
+    }, 3000);
 
-    setTimeout(function() {
-      this.remove()
-      content.remove()
-      decorationBlock.remove()
-    }, 3000)
-
-    let emotionBlock = document.createElement('div')
-    emotionBlock.classList.add('block-emotion')
+    let emotionBlock = document.createElement("div");
+    emotionBlock.classList.add("block-emotion");
     emotionBlock.innerHTML = `
                     <div class="emotion-email">
                               <div class="emotion-emai__content">
@@ -110,8 +141,8 @@ btn.onclick = function () {
                                 </p>
                               </div>
                     </div>
-    `
+    `;
 
-    imgBlock.appendChild(emotionBlock)
+    imgBlock.appendChild(emotionBlock);
   };
 };

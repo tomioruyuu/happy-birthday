@@ -252,7 +252,7 @@ img {
 .content {
   position: absolute;
   top: 32vh;
-  left: 17vw;
+  left: 14vw;
   user-select: none;
 }
 
@@ -264,11 +264,12 @@ img {
 .content span {
   position: relative;
   display: inline-block;
-  font-size: 7em;
+  font-size: 7.5em;
   font-family: "Leckerli One", cursive;
   font-weight: 400;
   letter-spacing: 0.4em;
   color: transparent;
+
   animation: addColor 2s infinite linear;
 }
 
@@ -327,27 +328,36 @@ img {
   0% {
     scale: 1;
     color: #fff;
-    text-shadow: 0 0 10px #654e92, 0 0 10px #654e92, 0 0 10px #654e92;
+    text-shadow: 0 0 10px #ffacac, 0 0 10px #ffacac, 0 0 10px #ffacac;
   }
   25% {
     scale: 1.1;
     color: #fff;
-    text-shadow: 0 0 10px #6c9bcf, 0 0 10px #6c9bcf, 0 0 10px #6c9bcf;
+    text-shadow: 0 0 10px #ffbfa9, 0 0 10px #ffbfa9, 0 0 10px #ffbfa9;
   }
   50% {
     scale: 1;
     color: #fff;
-    text-shadow: 0 0 10px #a5c0dd, 0 0 10px #a5c0dd, 0 0 10px #a5c0dd;
+    text-shadow: 0 0 10px #ffebb4, 0 0 10px #ffebb4, 0 0 10px #ffebb4;
   }
   75% {
     scale: 1.1;
     color: #fff;
-    text-shadow: 0 0 10px #ebd8b2, 0 0 10px #ebd8b2, 0 0 10px #ebd8b2;
+    text-shadow: 0 0 10px #fbffb1, 0 0 10px #fbffb1, 0 0 10px #fbffb1;
   }
   100% {
     scale: 1;
     color: #fff;
-    text-shadow: 0 0 10px #654e92, 0 0 10px #654e92, 0 0 10px #654e92;
+    text-shadow: 0 0 10px #ffacac, 0 0 10px #ffacac, 0 0 10px #ffacac;
+  }
+}
+
+@keyframes changeColor {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
   }
 }
 
@@ -434,6 +444,56 @@ img {
   }
 }
 
+/* PHÀN KHỐI ẢNH */
+.avatar-block {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.avatar-block img {
+  position: absolute;
+  width: 200px;
+  animation: display 2s linear forwards;
+  animation: comeFromTop 3s linear 3s forwards, upDown 2s linear 7s infinite;
+  opacity: 0;
+}
+
+.avatar-block img:nth-child(1){
+  top: -80%;
+  left: 17vw;
+}
+
+.avatar-block img:nth-child(2){
+  top: -80%;
+  right: 16vw;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes comeFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* PHÀN NÚT GẮN LIỀN VỚI ẢNH */
 .img-btn {
   position: absolute;
@@ -450,7 +510,7 @@ img {
   background-color: transparent;
   font-size: 30px;
   color: #fff;
-  text-shadow: 0 0 10px #e90064;
+  text-shadow: 0 0 10px #f80000;
   font-family: "Dancing Script", cursive;
   user-select: none;
   animation: display 2s linear forwards;
@@ -477,14 +537,14 @@ img {
 }
 
 .img-btn button:hover {
-  text-shadow: 0 0 10px #e90064, 0 0 20px #e90064, 0 0 30px #e90064;
+  text-shadow: 0 0 10px #e0144c, 0 0 25px #e0144c, 0 0 50px #e0144c;
   cursor: pointer;
 }
 
 /* PHẦN LÍ THƯ GỬI NGƯỜI CHÚC SINH NHẬT */
 .block-emotion {
   position: absolute;
-  top: 20vh;
+  top: 25vh;
   left: 28vw;
   width: 635px;
   z-index: 20;
@@ -531,7 +591,7 @@ img {
 .emotion-emai__content h2 {
   font-family: "Dancing Script", cursive;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .emotion-emai__content p {
