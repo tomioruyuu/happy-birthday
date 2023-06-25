@@ -6,7 +6,6 @@ btn.onclick = function () {
 
   // XOÁ NÚT VÀ BÓNG
   setTimeout(() => {
-    // this.remove()
     document.querySelector(".balls").remove();
   }, 2800);
 
@@ -63,6 +62,8 @@ btn.onclick = function () {
                     <div class="avatar-block">
                       <img src="./asssets/img/imgWire-1.png" alt="">
                       <img src="./asssets/img/imgWire-4.png" alt="">
+                      <img src="./asssets/img/imgWire-3.png" alt="">
+                      <img src="./asssets/img/imgWire-2.png" alt="">
                     </div>
 
                     <div class="img-btn">
@@ -77,31 +78,46 @@ btn.onclick = function () {
   let content1 = document.querySelector(".content-blocktext1");
   let content2 = document.querySelector(".content-blocktext2");
   let spanBlock = document.querySelectorAll(".content span");
-  console.log(spanBlock);
+
+  let avatarBlock = document.querySelectorAll(".avatar-block img");
+  console.log(avatarBlock);
+
   imgBtn.onclick = function () {
     // HIỆU ỨNG PHÀN CHỮ
     Object.assign(content1.style, {
-      transform: "translateY(-50vh) translateX(-50px)",
-      scale: "0.5",
-      transition: "2s",
+      transform: "translateY(-50vh) translateX(-125px)",
+      transition: "1.5s",
+      animation : 'smallLetter 1.5s linear 1.5s forwards '
     });
 
     Object.assign(content2.style, {
       transform: "translateY(-80vh) translateX(25vw)",
-      scale: "0.5",
-      transition: "2s",
+      transition: "1.5s",
+      animation : 'smallLetter 1.5s linear 1.5s forwards '
     });
 
+    // THÊM CÁC HIỆU ỨNG CHO CHỮ
     spanBlock.forEach((spanItem) => {
       Object.assign(spanItem.style, {
-        animation: "none",
-        color: "#fff",
-        letterSpacing: "0.2em",
-        textShadow: " 0 0 10px #06FF00, 0 0 10px #06FF00, 0 0 10px #06FF00",
-        animation: "changeColor 5s linear infinite",
-        animationDelay: "2.5s"
+        color: '#fff',
+        animation: "varyColor 5s linear 4.5s infinite",
       });
+      setTimeout(() => {
+        spanItem.style.textShadow = "0 0 10px #FFD93D, 0 0 12px #FFD93D, 0 0 15px #FFD93D"
+      }, 5000);
     });
+
+    // CHO HAI ẢNH TRÊN ĐẦU RA KHỎI TRANG WEB
+    Object.assign(avatarBlock[0].style, {
+      animation: 'removeImgTop 2s linear forwards'
+    });
+
+    Object.assign(avatarBlock[1].style, {
+      animation: 'removeImgTop 2s linear forwards'
+    });
+
+    avatarBlock[2].style.animation = 'removeFromRight 2s linear forwards'
+    avatarBlock[3].style.animation = 'removeFromLeft 2s linear forwards'
 
     // THÊM HIỆU ỨNG MỜ DẦN CHO NÚT TRONG ẢNH
     this.style.animation = " remove 1.5s linear forwards";
@@ -112,7 +128,6 @@ btn.onclick = function () {
 
     setTimeout(function () {
       this.remove();
-      content.remove();
       decorationBlock.remove();
     }, 3000);
 
@@ -141,6 +156,16 @@ btn.onclick = function () {
                                 </p>
                               </div>
                     </div>
+                    <div class="balloons-block">
+                      <img src="./asssets/img/ballonImg-1.png" alt="">
+                      <img src="./asssets/img/ballonImg-2.png" alt="">
+                      <img src="./asssets/img/ballonImg-4.png" alt="">
+                      <img src="./asssets/img/ballonImg-3.png" alt="">
+                      <img src="./asssets/img/ballonImg-5.png" alt="">
+                      <img src="./asssets/img/ballonImg-6.png" alt="">
+                    </div>
+
+
     `;
 
     imgBlock.appendChild(emotionBlock);

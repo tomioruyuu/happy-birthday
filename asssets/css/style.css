@@ -352,12 +352,23 @@ img {
   }
 }
 
-@keyframes changeColor {
+@keyframes varyColor {
   from {
     filter: hue-rotate(0deg);
   }
   to {
     filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes smallLetter {
+  from {
+    letter-spacing: 0.4em;
+    scale: 1;
+  }
+  to {
+    letter-spacing: 0.2em;
+    scale: 0.5;
   }
 }
 
@@ -450,6 +461,7 @@ img {
   top: 0;
   width: 100%;
   height: 100%;
+  user-select: none;
   z-index: 1;
 }
 
@@ -459,16 +471,29 @@ img {
   animation: display 2s linear forwards;
   animation: comeFromTop 3s linear 3s forwards, upDown 2s linear 7s infinite;
   opacity: 0;
+  user-select: none;
 }
 
-.avatar-block img:nth-child(1){
+.avatar-block img:nth-child(1) {
   top: -80%;
   left: 17vw;
 }
 
-.avatar-block img:nth-child(2){
+.avatar-block img:nth-child(2) {
   top: -80%;
   right: 16vw;
+}
+
+.avatar-block img:nth-child(3) {
+  top: 15vh;
+  right: -10vw;
+  animation: comFromBottom 3s linear 3s forwards, upDown 2s linear 8s infinite;
+}
+
+.avatar-block img:nth-child(4) {
+  top: 15vh;
+  left: -15vw;
+  animation: comFromBottom 3s linear 3s forwards, upDown 2s linear 8s infinite;
 }
 
 @keyframes upDown {
@@ -491,6 +516,56 @@ img {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes comFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes removeImgTop {
+  0% {
+    top: -75%;
+    opacity: 1;
+  }
+  100% {
+    top: -100vh;
+    opacity: 0;
+  }
+}
+
+@keyframes removeFromRight {
+  from {
+    top: 15vh;
+    right: -10vw;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    top: 0;
+    transform: translateX(20vw);
+    opacity: 0;
+  }
+}
+
+@keyframes removeFromLeft {
+  from {
+    top: 15vh;
+    right: -10vw;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    top: 0;
+    transform: translateX(-20vw);
+    opacity: 0;
   }
 }
 
@@ -545,11 +620,11 @@ img {
 .block-emotion {
   position: absolute;
   top: 25vh;
-  left: 28vw;
+  left: 27vw;
   width: 635px;
   z-index: 20;
   animation: arrive 2s linear forwards;
-  animation-delay: 2s;
+  animation-delay: 3s;
   opacity: 0;
 }
 
@@ -599,4 +674,69 @@ img {
   font-family: "Dancing Script", cursive;
   font-size: 18px;
   text-shadow: 0 0 0 5px #fff5e4;
+}
+
+.balloons-block {
+  position: absolute;
+  top: -37vh;
+  left: -27vw;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.balloons-block  img {
+  position: absolute;
+  width: 210px;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+
+
+.balloons-block  img:nth-child(1) {
+  top: 20px;
+  left: 0;
+}
+
+.balloons-block  img:nth-child(2) {
+  top: 20vh;
+  left: 15vw;
+}
+
+.balloons-block  img:nth-child(3) {
+  bottom: 20px;
+  left: 5vw;
+}
+
+.balloons-block  img:nth-child(4) {
+  top: 0;
+  right: 0;
+}
+
+.balloons-block  img:nth-child(5) {
+  top: 20vh;
+  right: 14vw;
+}
+
+.balloons-block  img:nth-child(6) {
+  bottom: 20px;
+  right: 4vw;
 }
