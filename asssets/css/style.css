@@ -126,9 +126,9 @@ body {
   border-radius: 20px;
   overflow: hidden;
   z-index: 1;
-  /* animation: appear 3s linear forwards; */
+  animation: appear 3s linear forwards;
   animation-delay: 8s;
-  /* opacity: 0; */
+  opacity: 0;
   cursor: pointer;
 }
 
