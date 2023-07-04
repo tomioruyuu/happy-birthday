@@ -120,15 +120,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px;
-  height: 80px;
+  width: 25%;
+  height: 70px;
   background: #000;
-  border-radius: 99px;
+  border-radius: 20px;
   overflow: hidden;
   z-index: 1;
-  animation: appear 3s linear forwards;
+  /* animation: appear 3s linear forwards; */
   animation-delay: 8s;
-  opacity: 0;
+  /* opacity: 0; */
   cursor: pointer;
 }
 
@@ -145,8 +145,8 @@ body {
   position: absolute;
   content: "";
   display: inline-block;
-  width: 400px;
-  height: 400px;
+  width: 1000px;
+  height: 1000px;
   background: conic-gradient(transparent, transparent, transparent, #00d7ff);
   animation: animated 4s infinite linear;
 }
@@ -155,8 +155,8 @@ body {
   position: absolute;
   content: "";
   display: inline-block;
-  width: 400px;
-  height: 400px;
+  width: 1000px;
+  height: 1000px;
   background: conic-gradient(transparent, transparent, transparent, #ea047e);
   animation: animated 4s infinite linear;
   animation-delay: -2s;
@@ -174,37 +174,37 @@ body {
 .btn span {
   position: absolute;
   inset: 3px;
-  border-radius: 88px;
+  border-radius: 20px;
   background: #252525;
   z-index: 5;
 }
 
-.btn button {
+.btn p {
+  display: inline-block;
   font-family: "Dancing Script", cursive;
   font-weight: 700;
-  font-size: 2em;
+  font-size: 2.3em;
   position: relative;
   background-color: transparent;
   border: none;
   outline: none;
   user-select: none;
   color: #fff;
-  z-index: 10;
-}
-
-.btn:hover button {
-  animation: changeColor 4s infinite linear;
+  text-shadow: 0 0 5px #fff;
   cursor: pointer;
+  z-index: 10;
+  transition: 1s;
 }
 
-@keyframes changeColor {
-  0%,
-  100% {
-    text-shadow: 0 0 10px #e90064, 0 0 10px #e90064, 0 0 10px #e90064;
-  }
-  50% {
-    text-shadow: 0 0 10px #31e1f7, 0 0 10px #31e1f7, 0 0 10px #31e1f7;
-  }
+.btn p:nth-of-type(4),
+.btn p:nth-of-type(6),
+.btn p:nth-of-type(9) {
+  margin-right: 15px;
+}
+
+p:hover{
+  transition: 0s;
+  text-shadow: 0 0 10px #FFCD38, 0 0 10px #FFCD38, 0 0 10px #FFCD38;
 }
 
 @keyframes lose {
@@ -455,6 +455,109 @@ img {
   }
 }
 
+/* PHẦN QUÀ RƠI */
+.gift-block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  top: -35vh;
+  left: -17vw;
+  width: 100vw;
+  height: 100vh;
+  user-select: none;
+}
+
+.gift-block img {
+  display: inline-block;
+  position: relative;
+  width: 170px;
+  top: -32vh;
+  transform: translateY(-100px);
+  user-select: none;
+  animation: topToBottom 200s linear 7s infinite;
+}
+
+.gift-block img:nth-child(1) {
+  left: 2%;
+  animation-duration: 6.5s;
+  animation-delay: 6.5s;
+}
+
+.gift-block img:nth-child(2) {
+  left: 2%;
+  animation-duration: 9s;
+  animation-delay: 7s;
+}
+
+.gift-block img:nth-child(3) {
+  left: 2%;
+  animation-duration: 7s;
+  animation-delay: 7s;
+}
+
+.gift-block img:nth-child(4) {
+  left: 2%;
+  animation-duration: 8.5s;
+  animation-delay: 7.5s;
+}
+
+.gift-block img:nth-child(5) {
+  left: 2%;
+  animation-duration: 9.5s;
+  animation-delay: 6.5s;
+}
+
+.gift-block img:nth-child(6) {
+  left: 2%;
+  animation-duration: 7s;
+  animation-delay: 8.5s;
+}
+
+.gift-block img:nth-child(7) {
+  left: 2%;
+  animation-duration: 9.75s;
+  animation-delay: 9s;
+}
+
+.gift-block img:nth-child(8) {
+  left: 2%;
+  animation-duration: 6.75s;
+  animation-delay: 6s;
+}
+
+@keyframes topToBottom {
+  0% {
+    top: -40vh;
+    transform: rotate(0) translateY(0);
+  }
+  20% {
+    transform: rotate(10deg) translateY(10px);
+  }
+  40% {
+    transform: rotate(-10deg) translateY(-10px);
+  }
+  60% {
+    transform: rotate(10deg) translateY(10px);
+  }
+  80% {
+    transform: rotate(-10deg) translateY(-10px);
+  }
+  100% {
+    top: 85%;
+    transform: rotate(10deg) translateY(10px);
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* PHÀN KHỐI ẢNH */
 .avatar-block {
   position: absolute;
@@ -661,6 +764,14 @@ img {
 .emotion-emai__content-heading .heart {
   color: #ff0000;
   font-size: 20px;
+  text-shadow: 0 0 10px #fd5656c4;
+  animation: rotateHeart 3s linear 5s infinite;
+}
+
+@keyframes rotateHeart {
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 .emotion-emai__content h2 {
@@ -672,10 +783,12 @@ img {
 .emotion-emai__content p {
   padding-top: 10px;
   font-family: "Dancing Script", cursive;
-  font-size: 18px;
+  line-height: 1.5;
+  font-size: 1.48em;
   text-shadow: 0 0 0 5px #fff5e4;
 }
 
+/* PHẦN BÓNG BAY Ở PHÀN LÁ THƯ */
 .balloons-block {
   position: absolute;
   top: -37vh;
@@ -685,13 +798,13 @@ img {
   z-index: 1000;
 }
 
-.balloons-block  img {
+.balloons-block img {
   position: absolute;
   width: 210px;
-  animation: rotate 3s linear infinite;
+  user-select: none;
 }
 
-@keyframes rotate {
+@keyframes rotateBalloons {
   0% {
     transform: rotate(0);
   }
@@ -709,34 +822,121 @@ img {
   }
 }
 
-
-
-.balloons-block  img:nth-child(1) {
+.balloons-block img:nth-child(1) {
   top: 20px;
   left: 0;
+  opacity: 0;
+  animation: slineInLeft1 2.5s linear 5s forwards,
+    rotateBalloons 3s linear 8.5s infinite;
 }
 
-.balloons-block  img:nth-child(2) {
+@keyframes slineInLeft1 {
+  from {
+    opacity: 0;
+    scale: 0;
+    transform: translateX(-30vw) translateY(-25vh);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.balloons-block img:nth-child(2) {
   top: 20vh;
   left: 15vw;
+  opacity: 0;
+  animation: slineInLeft2 2.5s linear 5s forwards,
+    rotateBalloons 3s linear 8.25s infinite;
+  z-index: -100;
 }
 
-.balloons-block  img:nth-child(3) {
+@keyframes slineInLeft2 {
+  from {
+    opacity: 0;
+    transform: translateX(-30vw);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.balloons-block img:nth-child(3) {
   bottom: 20px;
   left: 5vw;
+  opacity: 0;
+  animation: slineInLeft3 2.5s linear 5s forwards,
+    rotateBalloons 3s linear 8s infinite;
 }
 
-.balloons-block  img:nth-child(4) {
+@keyframes slineInLeft3 {
+  from {
+    opacity: 0;
+    transform: translate(-30vw, -30vh);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.balloons-block img:nth-child(4) {
   top: 0;
   right: 0;
+  opacity: 0;
+  animation: slineInRight4 2.5s linear 5s forwards,
+    rotateBalloons 3s linear 7.95s infinite;
 }
 
-.balloons-block  img:nth-child(5) {
+@keyframes slineInRight4 {
+  from {
+    opacity: 0;
+    scale: 0;
+    transform: translateX(30vw) translateY(-25vh);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.balloons-block img:nth-child(5) {
   top: 20vh;
   right: 14vw;
+  opacity: 0;
+  animation: slineInRight5 2.5s linear 5s forwards,
+    rotateBalloons 3s linear 7.75s infinite;
 }
 
-.balloons-block  img:nth-child(6) {
+@keyframes slineInRight5 {
+  from {
+    opacity: 0;
+    transform: translateX(30vw);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.balloons-block img:nth-child(6) {
   bottom: 20px;
   right: 4vw;
+  opacity: 0;
+  animation: slineInRight6 2.5s linear 5s forwards,
+    rotateBalloons 3s linear 7.5s infinite;
+}
+
+@keyframes slineInRight6 {
+  from {
+    opacity: 0;
+    transform: translate(30vw, -30vh);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }

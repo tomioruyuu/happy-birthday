@@ -48,6 +48,18 @@ btn.onclick = function () {
                         <span>Y</span>
                     </div>
 
+                    <div class="gift-block">
+                      <img src="./asssets/img/gift-1.png" alt="">
+                      <img src="./asssets/img/gift-9.png" alt="">
+                      <img src="./asssets/img/gift-6.png" alt="">
+                      <img src="./asssets/img/gift-2.png" alt="">
+                      <img src="./asssets/img/gift-4.png" alt="">
+                      <img src="./asssets/img/gift-8.png" alt="">
+                      <img src="./asssets/img/gift-7.png" alt="">
+                      <img src="./asssets/img/gift-5.png" alt="">
+                      
+                    </div>
+
                     <div class="content-blocktext2">
                       <span>B</span>
                       <span>I</span>
@@ -73,6 +85,7 @@ btn.onclick = function () {
       `;
   imgBlock.appendChild(img);
 
+
   // NHẤN VÀO CHỮ HIỆN TRÊN ẢNH
   let imgBtn = document.querySelector(".img-btn");
   let content1 = document.querySelector(".content-blocktext1");
@@ -80,44 +93,44 @@ btn.onclick = function () {
   let spanBlock = document.querySelectorAll(".content span");
 
   let avatarBlock = document.querySelectorAll(".avatar-block img");
-  console.log(avatarBlock);
 
   imgBtn.onclick = function () {
     // HIỆU ỨNG PHÀN CHỮ
     Object.assign(content1.style, {
       transform: "translateY(-50vh) translateX(-125px)",
       transition: "1.5s",
-      animation : 'smallLetter 1.5s linear 1.5s forwards '
+      animation: "smallLetter 1.5s linear 1.5s forwards ",
     });
 
     Object.assign(content2.style, {
       transform: "translateY(-80vh) translateX(25vw)",
       transition: "1.5s",
-      animation : 'smallLetter 1.5s linear 1.5s forwards '
+      animation: "smallLetter 1.5s linear 1.5s forwards ",
     });
 
     // THÊM CÁC HIỆU ỨNG CHO CHỮ
     spanBlock.forEach((spanItem) => {
       Object.assign(spanItem.style, {
-        color: '#fff',
+        color: "#fff",
         animation: "varyColor 5s linear 4.5s infinite",
       });
       setTimeout(() => {
-        spanItem.style.textShadow = "0 0 10px #FFD93D, 0 0 12px #FFD93D, 0 0 15px #FFD93D"
+        spanItem.style.textShadow =
+          "0 0 10px #00DFA2, 0 0 12px #00DFA2, 0 0 15px #00DFA2";
       }, 5000);
     });
 
     // CHO HAI ẢNH TRÊN ĐẦU RA KHỎI TRANG WEB
     Object.assign(avatarBlock[0].style, {
-      animation: 'removeImgTop 2s linear forwards'
+      animation: "removeImgTop 2s linear forwards",
     });
 
     Object.assign(avatarBlock[1].style, {
-      animation: 'removeImgTop 2s linear forwards'
+      animation: "removeImgTop 2s linear forwards",
     });
 
-    avatarBlock[2].style.animation = 'removeFromRight 2s linear forwards'
-    avatarBlock[3].style.animation = 'removeFromLeft 2s linear forwards'
+    avatarBlock[2].style.animation = "removeFromRight 2s linear forwards";
+    avatarBlock[3].style.animation = "removeFromLeft 2s linear forwards";
 
     // THÊM HIỆU ỨNG MỜ DẦN CHO NÚT TRONG ẢNH
     this.style.animation = " remove 1.5s linear forwards";
@@ -126,9 +139,16 @@ btn.onclick = function () {
     let decorationBlock = document.querySelector(".decoration-block");
     decorationBlock.style.animation = "remove 1.5s linear forwards";
 
+    // LÀM MỜ PHẦN QUÀ
+    let giftblock = document.querySelectorAll('.gift-block img')
+    giftblock.forEach(giftItem => {
+      giftItem.style.animation = 'opacity 1s linear forwards'
+    })
     setTimeout(function () {
       this.remove();
       decorationBlock.remove();
+      document.querySelector('.avatar-block').remove()
+      giftblock.remove()
     }, 3000);
 
     let emotionBlock = document.createElement("div");
@@ -138,21 +158,17 @@ btn.onclick = function () {
                               <div class="emotion-emai__content">
                                 <div class="emotion-emai__content-heading">
                                   <i class="fa-solid fa-heart heart"></i>
-                                  <h2>Mừng sinh nhật bé tròn 18 tuồi</h2>
+                                  <h2>Mừng sinh nhật Hoài 18 tuồi</h2>
                                   <i class="fa-solid fa-heart heart"></i>
                                 </div>
                                 <p>
-                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
-                                  obcaecati? Sed laudantium officia nobis sapiente perferendis
-                                  perspiciatis rem tenetur quis ad sequi incidunt porro, error
-                                  cumque quos, nisi laboriosam ratione. Asperiores, perspiciatis ex
-                                  eius incidunt tempora, voluptatum odio consequuntur rerum quo
-                                  ducimus quis dolorum obcaecati non facilis saepe. Est a, maiores
-                                  enim recusandae tenetur adipisci asperiores quam provident. Est,
-                                  distinctio. Quis ut provident vera voluptate ratione repellat,
-                                  fugiat labore sunt reprehenderit amet quisquam voluptatem illo nam
-                                  eaque pariatur et? Temporibus fugiat veniam excepturi vero id
-                                  omnis quae quibusdam repudiandae accusantium eligendi!
+                                Cảm ơn Hoài!! Người đã mang đến cho mình niềm vui trong cuộc
+                                sống và vô vàn hứng khởi trong công việc và học tập. Nhân ngày
+                                sinh nhật Hoài, mình chúc bé luôn xinh tươi, yêu đời, thành công
+                                trong cuộc sống. Bước sang tuổi mới, độ tuổi này sẽ mang đến
+                                nhiều áp lực về cuộc sống hơn, mong bé có vững vàng trong sự
+                                nghiệp và học tập, mình sẽ sát cánh và giúp Hoài có những khoảng thời gian
+                                bình yên trong cuộc sống. Chúc Hoài sinh nhật vui vẻ!!
                                 </p>
                               </div>
                     </div>
